@@ -9,27 +9,22 @@ public class Quiz {
 
     public Quiz(String filepath) throws FileNotFoundException{
         fileIn = new BufferedReader(new FileReader("Quiz.txt"));
-        mcqList = new LinkedList<MCQ>(); //HW2: Updated to LinkedList data structure
+        mcqList = new LinkedList<MCQ>();
         numCorrect = 0;
     }
 
-    //Reads questions into individual MCQ object and adds to the MCQ list.
-    //Returns false if file is empty, returns true if file is read w/o issue
-    //Precondition: If file is not empty, we assume it is formatted correctly and has at least one question.
     public boolean ReadInQuestions() {
-        //catching case where file is empty and exiting program
+ 
         try {
 			quizTitle = fileIn.readLine();
-            fileIn.readLine(); //skip empty line
+            fileIn.readLine();
 		} catch (IOException e) {
 			System.out.println("File is empty! Ensure Quiz.txt has questions next time.");
-            return false; //failure exit
+            return false;
 		}
 
-        //File guaranteed to have at least one question, so begin reading
-        //Catch block is for when there are no more questions left, to exit reading file
         try {
-            String tempQuestion[] = new String[5]; //Store questions to be passed into constructor
+            String tempQuestion[] = new String[5];
             String tempLine = null;
 
             do {
@@ -38,31 +33,25 @@ public class Quiz {
                     tempQuestion[i] = tempLine;
                 }
                 mcqList.add(new MCQ(tempQuestion));
-                tempLine = fileIn.readLine(); //skips empty line 
+                tempLine = fileIn.readLine();
             } while (tempLine != null);
 
         } catch (IOException e) {
             System.out.println("Error while reading in questions.");
-            return false; //failure exit
+            return false;
         }
 
-        return true; //successful exit
+        return true;
     }
 
-    /*runQuiz takes care of the active user interaction part of the exam: displaying
-     *the questions, reading in answers, and finally, displaying the score. */
+
     public void runQuiz() {
         Scanner userIn = new Scanner(System.in);
         int userAnswer = 0;
 
         System.out.println("Welcome to the " + quizTitle);
         System.out.println("Please enjoy these questions!\n");
-        
-        
-        /* for-each loop displays the questions, reads in answer (checking for bounds),
-         * and updates numCorrect.
-         * HW2: for loop replaced with for-each loop utilizing function of Collections framework.
-         */
+
         for(MCQ q : mcqList)
         {
             q.displayQuestion();
