@@ -95,7 +95,7 @@ public class QuizRunner extends JFrame {
     }
 
     private void finishQuiz() {
-        JOptionPane.showMessageDialog(this, "Quiz completed! You scored " + numCorrect + " out of 4", "Quiz Finished", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Quiz completed! You scored " + numCorrect + " out of 4", "Total Score", JOptionPane.INFORMATION_MESSAGE);
         dispose();
     }
 
