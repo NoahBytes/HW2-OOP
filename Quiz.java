@@ -51,24 +51,7 @@ public class Quiz {
 
         System.out.println("Welcome to the " + quizTitle);
         System.out.println("Please enjoy these questions!\n");
-
-        // for(MCQ q : mcqList)
-        // {
-        //     q.displayQuestion();
-        //     System.out.print("Please input your answer (1-4): ");
-        //     userAnswer = userIn.nextInt();
-        //     while (userAnswer < 1 || userAnswer > 4) {
-        //         System.out.println(userAnswer + " is an invalid choice.");
-        //         System.out.print("Please enter an integer between 1 and 4: ");
-        //         userAnswer = userIn.nextInt();
-        //     }
-        //     if (q.confirmAnswer(userAnswer)){
-        //         numCorrect++;
-        //     }
-        // }
-
-        /* NOTE: below code implements the for-each loop above using an iterator.
-         * Implementation was done for practice. */
+        
         Iterator<MCQ> q = mcqList.iterator();
         while (q.hasNext())
         {

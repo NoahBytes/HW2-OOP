@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class QuizRunner extends JFrame {
     private JPanel panel;
@@ -14,15 +15,19 @@ public class QuizRunner extends JFrame {
     private List<MCQ> mcqList;
     private int currentQuestion = 0;
     private int numCorrect = 0;
+    private Iterator<MCQ> iterator;
 
     public QuizRunner(List<MCQ> mcqs) {
         mcqList = mcqs;
-        setTitle("Quiz Application");
+        iterator = mcqs.iterator();
+        setTitle("Social Studies Exam");
         createComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 500);
         setVisible(true);
-        displayQuestion(mcqList.get(0));
+        if (iterator.hasNext()){
+            displayQuestion(iterator.next());
+        }
     }
 
     private void createComponents() {
