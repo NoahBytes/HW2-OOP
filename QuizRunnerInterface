@@ -1,0 +1,9 @@
+interface QuizRunner {
+  private void createComponents();
+  private void createOptionButtons();
+  private void createNextButton();
+  private void displayQuestion(MCQ mcq);
+  private boolean checkAnswer();
+  private void finishQuiz();
+  public static List<MCQ> readMCQs(String filepath)
+}
