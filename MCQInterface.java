@@ -1,4 +1,4 @@
-interface MCQ {
+interface MCQInterface {
   public void displayQuestion();
   public String getQuestion();
   public String[] getChoice();

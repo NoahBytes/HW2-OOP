@@ -39,11 +39,5 @@ public class MCQ {
 
     public boolean confirmAnswer(int userAnswer) {
         return userAnswer == correctInd - 1;
-        // if (userAnswer == correctInd) {
-        //     System.out.println("That is the correct answer. Good job!\n");
-        //     return true;
-        // }
-        // System.out.println("That is the wrong answer. Moving on...\n");
-        // return false;
     }
 }

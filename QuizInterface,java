@@ -1,4 +1,4 @@
-interface Quiz {
+interface QuizInterface {
   public boolean ReadInQuestions();
   public void runQuiz();
 }
